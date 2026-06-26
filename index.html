@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOYA Properties — Luxury Real Estate in Dubai</title>
+<meta name="description" content="JOYA Properties — curated luxury residences and private advisory across Dubai's most sought-after addresses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FFFFFF; --c-dark:#0D0D0D; --c-card:#F7F7F7;
+  --c-tx:#0D0D0D; --c-tx2:#555555; --c-tx3:#888888; --c-inv:#FFFFFF;
+  --c-border:#E5E5E5; --c-cta:#111111;
+  --section-px:clamp(22px,6vw,120px); --max-w:1280px;
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-pill:999px; --r-card:12px;
+  --sh-card:0 2px 16px rgba(0,0,0,0.07);
+  --sh-hover:0 8px 32px rgba(0,0,0,0.12);
+  --sh-nav:0 1px 0 rgba(0,0,0,0.06);
+  --t-fast:150ms ease; --t-base:250ms ease; --t-slow:400ms ease;
+  --f-disp:'Playfair Display',serif; --f-sans:'DM Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-sans);background:var(--c-bg);color:var(--c-tx);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--section-px)}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--c-tx3);display:inline-flex;align-items:center;gap:8px}
+.kicker::before{content:"";width:22px;height:1px;background:currentColor;opacity:.5}
+.kicker.center::before{display:none}
+
+/* ===== buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:0.04em;padding:11px 22px;border-radius:var(--r-pill);border:none;cursor:pointer;transition:background var(--t-fast),transform var(--t-fast),box-shadow var(--t-base);font-family:inherit}
+.btn svg{width:15px;height:15px}
+.btn-dark{background:#111;color:#fff}
+.btn-dark:hover{background:#333}
+.btn-light{background:#fff;color:#111}
+.btn-light:hover{background:#F0F0F0}
+.btn-out{background:transparent;border:1px solid var(--c-border);color:var(--c-tx)}
+.btn-out:hover{background:#F7F7F7}
+.cta-pill{display:inline-flex;align-items:center;gap:14px;background:#fff;color:#111;padding:8px 8px 8px 24px;border-radius:var(--r-pill);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:transform var(--t-fast),box-shadow var(--t-base)}
+.cta-pill:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.3)}
+.icon-circle{width:34px;height:34px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform var(--t-base)}
+.cta-pill:hover .icon-circle{transform:translateX(3px) rotate(-45deg)}
+.icon-circle svg{width:16px;height:16px}
+
+/* ===== NAVBAR ===== */
+.nav{position:fixed;top:18px;left:0;right:0;z-index:200;display:flex;justify-content:center;transition:top var(--t-base)}
+.nav-inner{width:min(calc(100% - 36px),var(--max-w));height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px;border-radius:var(--r-pill);background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.15);color:#fff;transition:background var(--t-base),border var(--t-base),box-shadow var(--t-base),color var(--t-base)}
+.nav.scrolled .nav-inner{background:rgba(255,255,255,0.96);border-color:var(--c-border);box-shadow:var(--sh-nav);color:var(--c-tx)}
+.logo{font-family:var(--f-disp);font-size:23px;font-weight:700;letter-spacing:0.04em}
+.logo small{font-family:var(--f-sans);font-size:9px;font-weight:600;letter-spacing:0.25em;display:block;margin-top:-4px;opacity:.7;text-transform:uppercase}
+.nav-links{display:flex;gap:2px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.02em;padding:8px 15px;border-radius:var(--r-pill);transition:background var(--t-fast)}
+.nav .nav-links a:hover{background:rgba(255,255,255,0.15)}
+.nav.scrolled .nav-links a:hover{background:#F0F0F0}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-cta{font-size:13px;font-weight:600;letter-spacing:0.04em;padding:11px 20px;border-radius:var(--r-pill);background:#fff;color:#111;transition:background var(--t-fast),color var(--t-base)}
+.nav.scrolled .nav-cta{background:#111;color:#fff}
+.nav-cta:hover,.nav.scrolled .nav-cta:hover{background:#333;color:#fff}
+.burger{display:none;background:none;border:none;color:inherit;cursor:pointer;width:40px;height:40px;align-items:center;justify-content:center}
+.burger svg{width:24px;height:24px}
+/* mobile drawer */
+.drawer{position:fixed;inset:0;z-index:300;background:rgba(13,13,13,0.98);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;opacity:0;visibility:hidden;transition:opacity var(--t-base)}
+.drawer.open{opacity:1;visibility:visible}
+.drawer a{color:#fff;font-family:var(--f-disp);font-size:32px;font-weight:400;padding:8px 0}
+.drawer a:hover{font-style:italic}
+.drawer .close{position:absolute;top:28px;right:26px;background:none;border:none;color:#fff;cursor:pointer}
+.drawer .close svg{width:30px;height:30px}
+.drawer .btn{margin-top:24px}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:94vh;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(0,0,0,0.30) 0%,rgba(0,0,0,0.28) 42%,rgba(0,0,0,0.72) 100%)}
+.hero-top{flex:1;display:flex;justify-content:space-between;align-items:flex-start;gap:48px;padding:150px var(--section-px) 0;max-width:var(--max-w);margin:0 auto;width:100%}
+.hero-intro{max-width:460px;color:#fff}
+.hero-intro .kicker{color:rgba(255,255,255,0.78);margin-bottom:18px}
+.hero-intro .kicker::before{background:rgba(255,255,255,0.6)}
+.hero-headline{font-size:clamp(21px,2.6vw,30px);font-weight:600;line-height:1.25;letter-spacing:0.01em}
+.hero-headline em{font-family:var(--f-disp);font-style:italic;font-weight:400}
+.hero-stats{display:flex;flex-direction:column;gap:22px;color:#fff;padding-top:6px}
+.stat{text-align:right;max-width:210px}
+.stat .num{font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-0.02em;line-height:1;font-family:var(--f-disp)}
+.stat hr{border:none;height:1px;background:rgba(255,255,255,0.25);margin:10px 0 8px;width:60px;margin-left:auto}
+.stat .desc{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.4}
+.hero-display{position:relative;z-index:1;text-align:center;line-height:0.9;font-family:var(--f-disp);font-weight:700;color:rgba(255,255,255,0.96);font-size:clamp(88px,20vw,260px);letter-spacing:0.02em;padding:0 var(--section-px);transform:translateY(16px);pointer-events:none}
+.hero-cta-wrap{display:flex;justify-content:center;padding:0 var(--section-px) 42px;position:relative;z-index:2}
+
+/* ===== SECTION SHELL ===== */
+.section{padding:clamp(64px,9vw,110px) 0}
+.section-head{max-width:560px;margin:0 auto 56px;text-align:center}
+.section-head .kicker{margin-bottom:16px}
+.s-title{font-family:var(--f-disp);font-weight:700;font-size:clamp(30px,4vw,50px);letter-spacing:-0.02em;line-height:1.08}
+.s-title em{font-style:italic;font-weight:400}
+.s-sub{font-size:14px;color:var(--c-tx2);margin-top:16px;line-height:1.65}
+
+/* ===== FEATURE GRID ===== */
+.feature-grid{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:44px;align-items:center}
+.feat-heading{font-family:var(--f-disp);font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1.12;letter-spacing:-0.02em;margin-bottom:16px}
+.feat-body{font-size:14px;color:var(--c-tx2);margin-bottom:24px;max-width:300px}
+.partners{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid var(--c-border)}
+.partners span{font-size:12px;color:var(--c-tx3);font-weight:600;display:inline-flex;align-items:center;gap:7px;opacity:.85;transition:opacity var(--t-fast)}
+.partners span:hover{opacity:1}.partners svg{width:16px;height:16px}
+.feat-center img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-md)}
+.feat-list{list-style:none}
+.feat-item{padding:14px 0;border-bottom:1px solid var(--c-border)}
+.feat-item:first-child{padding-top:0}
+.feat-item h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.feat-item p{font-size:12px;color:var(--c-tx3);line-height:1.5}
+.review{display:flex;align-items:center;gap:14px;margin-top:28px}
+.avatars{display:flex}
+.avatars img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-8px}
+.avatars img:first-child{margin-left:0}
+.review .score{font-size:14px;font-weight:700}
+.review .score span{color:var(--c-tx3);font-weight:400;font-size:12px;display:block}
+
+/* ===== AREAS ===== */
+.areas{background:var(--c-card)}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.area-card{position:relative;border-radius:var(--r-card);overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.area-card.tall{aspect-ratio:auto;grid-row:span 2}
+.area-card img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow)}
+.area-card:hover img{transform:scale(1.05)}
+.area-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent 55%)}
+.area-meta{position:absolute;left:0;right:0;bottom:0;padding:22px;z-index:2;color:#fff;display:flex;justify-content:space-between;align-items:flex-end}
+.area-meta h3{font-family:var(--f-disp);font-size:22px;font-weight:600}
+.area-meta small{font-size:12px;color:rgba(255,255,255,0.75)}
+.area-meta .arr{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background var(--t-fast),transform var(--t-base)}
+.area-card:hover .arr{background:#fff;color:#111;transform:rotate(-45deg)}
+.area-meta .arr svg{width:16px;height:16px}
+
+/* ===== PROPERTIES ===== */
+.props-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:46px}
+.props-head h2{font-family:var(--f-disp);font-weight:700;font-size:clamp(30px,4vw,50px);letter-spacing:-0.02em;line-height:1.08;max-width:440px}
+.props-head h2 em{font-style:italic;font-weight:400}
+.props-head p{font-size:14px;color:var(--c-tx2);max-width:320px}
+.props-row{display:flex;gap:24px;overflow-x:auto;padding:8px 4px 26px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.props-row::-webkit-scrollbar{display:none}
+.prop-card{flex:0 0 348px;scroll-snap-align:start;background:#fff;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh-card);transition:transform var(--t-base),box-shadow var(--t-base);cursor:pointer}
+.prop-card:hover{transform:translateY(-4px);box-shadow:var(--sh-hover)}
+.prop-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.prop-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow)}
+.prop-card:hover .prop-img img{transform:scale(1.04)}
+.badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:var(--r-pill)}
+.prop-details{padding:16px 18px}
+.prop-loc{font-size:12px;color:var(--c-tx3);display:flex;align-items:center;gap:5px;margin-bottom:6px}
+.prop-loc svg{width:13px;height:13px}
+.prop-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.prop-row h4{font-size:15px;font-weight:700}
+.prop-price{font-family:var(--f-disp);font-size:19px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
+.prop-specs{display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--c-border)}
+.prop-specs span{font-size:12px;color:var(--c-tx2);display:inline-flex;align-items:center;gap:5px}
+.prop-specs svg{width:14px;height:14px;color:var(--c-tx3)}
+
+/* ===== TEAM (dark) ===== */
+.team{background:var(--c-dark);color:#fff}
+.team-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center}
+.team-cards{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.team-cards::-webkit-scrollbar{display:none}
+.team-card{position:relative;flex:0 0 172px;aspect-ratio:3/4;border-radius:var(--r-card);overflow:hidden;transition:transform var(--t-base)}
+.team-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(.92);transition:filter var(--t-base)}
+.team-card:hover{transform:scale(1.02)}
+.team-card:hover img{filter:grayscale(15%) brightness(1.05)}
+.team-card .meta{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 14px;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent)}
+.team-card .meta b{display:block;font-size:13px;font-weight:600}
+.team-card .meta small{font-size:11px;color:rgba(255,255,255,0.65)}
+.team-text{max-width:340px;margin-left:auto}
+.team-text .kicker{color:rgba(255,255,255,0.5)}
+.team-text h3{font-family:var(--f-disp);font-weight:400;font-size:clamp(30px,3.4vw,46px);line-height:1.1;letter-spacing:-0.01em;margin:16px 0 18px}
+.team-text h3 em{font-style:italic}
+.team-text p{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:26px}
+
+/* ===== TESTIMONIALS ===== */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quote{background:var(--c-card);border-radius:var(--r-card);padding:30px 28px;display:flex;flex-direction:column;gap:18px}
+.quote .stars{display:flex;gap:3px;color:#111}
+.quote .stars svg{width:15px;height:15px;fill:currentColor}
+.quote p{font-size:15px;line-height:1.6;color:var(--c-tx);font-family:var(--f-disp);font-style:italic}
+.quote .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.quote .who img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.quote .who b{font-size:13px;font-weight:600;display:block}
+.quote .who small{font-size:12px;color:var(--c-tx3)}
+
+/* ===== CTA BAND + CONTACT (dark) ===== */
+.contact{background:var(--c-dark);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.contact-l h2{font-family:var(--f-disp);font-weight:700;font-size:clamp(30px,4vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:16px 0 18px}
+.contact-l h2 em{font-style:italic;font-weight:400}
+.contact-l p{font-size:14px;color:rgba(255,255,255,0.65);max-width:380px;margin-bottom:28px}
+.contact-info{list-style:none;display:flex;flex-direction:column;gap:14px}
+.contact-info li{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,0.85)}
+.contact-info svg{width:18px;height:18px;color:rgba(255,255,255,0.5);flex-shrink:0}
+.form{background:#1A1A1A;border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:30px}
+.field{margin-bottom:16px}
+.field label{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;background:#0D0D0D;border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-sm);padding:12px 14px;color:#fff;font-family:inherit;font-size:14px;transition:border var(--t-fast)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:rgba(255,255,255,0.45)}
+.field textarea{resize:vertical;min-height:90px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .btn-light{width:100%;justify-content:center;margin-top:4px}
+.form-note{font-size:12px;color:rgba(255,255,255,0.4);margin-top:14px;text-align:center}
+.form-ok{display:none;text-align:center;padding:30px 0}
+.form-ok svg{width:48px;height:48px;color:#fff;margin:0 auto 16px}
+.form-ok h4{font-family:var(--f-disp);font-size:24px;margin-bottom:8px}
+.form-ok p{font-size:14px;color:rgba(255,255,255,0.65)}
+
+/* ===== FOOTER ===== */
+.footer{background:#080808;color:#fff;padding:72px 0 36px}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer .logo{font-size:30px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,0.6);max-width:300px}
+.footer-social{display:flex;gap:8px;margin-top:22px}
+.footer-social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;transition:background var(--t-fast),color var(--t-fast)}
+.footer-social a:hover{background:#fff;color:#111}
+.footer-social svg{width:15px;height:15px}
+.footer-col h5{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:18px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col a{font-size:14px;color:rgba(255,255,255,0.8);transition:color var(--t-fast)}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:26px;flex-wrap:wrap}
+.footer-bottom small{font-size:12px;color:rgba(255,255,255,0.45)}
+.footer-bottom .links{display:flex;gap:22px}
+.footer-bottom .links a{font-size:12px;color:rgba(255,255,255,0.45);transition:color var(--t-fast)}
+.footer-bottom .links a:hover{color:#fff}
+
+/* ===== animation ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade{opacity:0;animation:fadeUp .8s ease forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== responsive ===== */
+@media(max-width:1024px){
+  .feature-grid{grid-template-columns:1fr;gap:48px}
+  .feat-center{order:-1}.feat-center img{max-width:520px;margin:0 auto}
+  .area-grid{grid-template-columns:repeat(2,1fr)}
+  .area-card.tall{grid-row:auto;aspect-ratio:4/3}
+  .team-grid{grid-template-columns:1fr;gap:40px}
+  .team-text{margin-left:0}
+  .quotes{grid-template-columns:1fr 1fr}
+  .quotes .quote:last-child{display:none}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle{font-size:12px;font-weight:600;letter-spacing:0.06em;padding:9px 13px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,0.25);background:transparent;color:inherit;cursor:pointer;font-family:inherit;transition:background var(--t-fast),border var(--t-fast)}
+.lang-toggle:hover{background:rgba(255,255,255,0.15)}
+.nav.scrolled .lang-toggle{border-color:var(--c-border)}
+.nav.scrolled .lang-toggle:hover{background:#F0F0F0}
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:400;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px 13px 16px;border-radius:var(--r-pill);box-shadow:0 8px 28px rgba(37,211,102,0.4);font-size:14px;font-weight:600;transition:transform var(--t-base),box-shadow var(--t-base);animation:waPop .5s ease .8s both}
+.wa-fab:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(37,211,102,0.5)}
+.wa-fab svg{width:24px;height:24px;flex-shrink:0}
+.wa-fab .wa-label{white-space:nowrap}
+@keyframes waPop{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:560px){.wa-fab .wa-label{display:none}.wa-fab{padding:14px;border-radius:50%}}
+
+/* WhatsApp CTA inside contact form */
+.btn-wa{background:#25D366;color:#fff;width:100%;justify-content:center;margin-bottom:12px}
+.btn-wa:hover{background:#1ebe5a}
+.btn-wa svg{width:18px;height:18px}
+.form-divider{display:flex;align-items:center;gap:14px;margin:6px 0 16px;color:rgba(255,255,255,0.35);font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.form-divider::before,.form-divider::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.1)}
+
+/* ===== RTL SUPPORT ===== */
+html[dir="rtl"] body{font-family:'Tajawal',sans-serif}
+html[dir="rtl"] .logo,html[dir="rtl"] .hero-headline em,html[dir="rtl"] .hero-display,html[dir="rtl"] .s-title,html[dir="rtl"] .stat .num,html[dir="rtl"] .feat-heading,html[dir="rtl"] .area-meta h3,html[dir="rtl"] .props-head h2,html[dir="rtl"] .prop-price,html[dir="rtl"] .team-text h3,html[dir="rtl"] .quote p,html[dir="rtl"] .contact-l h2,html[dir="rtl"] .form-ok h4,html[dir="rtl"] .footer .logo{font-family:'Amiri',serif}
+html[dir="rtl"] *{letter-spacing:0 !important}
+html[dir="rtl"] .nav-inner{padding:0 22px 0 8px}
+html[dir="rtl"] .cta-pill{padding:8px 24px 8px 8px}
+html[dir="rtl"] .stat{text-align:right}
+html[dir="rtl"] .stat hr{margin-left:0;margin-right:auto}
+html[dir="rtl"] .team-text{margin-left:0;margin-right:auto}
+html[dir="rtl"] .feat-body{max-width:none}
+html[dir="rtl"] .btn svg,html[dir="rtl"] .cta-pill .icon-circle svg,html[dir="rtl"] .nav-cta svg{transform:scaleX(-1)}
+html[dir="rtl"] .cta-pill:hover .icon-circle{transform:translateX(-3px) rotate(45deg)}
+html[dir="rtl"] .area-card:hover .arr{transform:rotate(45deg)}
+html[dir="rtl"] .wa-fab{right:auto;left:24px}
+html[dir="rtl"] .text-transform\:none{text-transform:none}
+
+@media(max-width:768px){
+  .nav-links,.nav-right .nav-cta{display:none}
+  .burger{display:flex}
+  .hero-top{flex-direction:column;padding-top:128px;gap:30px}
+  .hero-stats{flex-direction:row;width:100%;justify-content:space-between;gap:14px}
+  .stat{text-align:left}.stat hr{margin-left:0}
+  .props-head{flex-direction:column;align-items:flex-start;gap:14px}
+  .area-grid{grid-template-columns:1fr}
+  .quotes{grid-template-columns:1fr}.quotes .quote:last-child{display:flex}
+  .field-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">JOYA<small data-ar="عقارات · دبي">Properties · Dubai</small></a>
+    <ul class="nav-links">
+      <li><a href="#properties" data-ar="العقارات">Properties</a></li>
+      <li><a href="#areas" data-ar="المناطق">Areas</a></li>
+      <li><a href="#about" data-ar="عن جويا">About</a></li>
+      <li><a href="#team" data-ar="الفريق">Team</a></li>
+      <li><a href="#contact" data-ar="تواصل">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">العربية</button>
+      <a href="#contact" class="nav-cta" data-ar="احجز معاينة">Book a Viewing</a>
+      <button class="burger" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer" id="drawer">
+  <button class="close" id="closeDrawer" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  <a href="#properties" class="dlink" data-ar="العقارات">Properties</a>
+  <a href="#areas" class="dlink" data-ar="المناطق">Areas</a>
+  <a href="#about" class="dlink" data-ar="عن جويا">About</a>
+  <a href="#team" class="dlink" data-ar="الفريق">Team</a>
+  <a href="#contact" class="dlink" data-ar="تواصل">Contact</a>
+  <a href="#contact" class="btn btn-light dlink"><span data-ar="احجز معاينة">Book a Viewing</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=80" alt="Dubai skyline with Burj Khalifa at dusk"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-top">
+    <div class="hero-intro fade d1">
+      <span class="kicker" data-ar="عقارات فاخرة · دبي">Luxury Real Estate · Dubai</span>
+      <h1 class="hero-headline" data-ar="امتلك عنواناً <em>يُعرّف</em> الأفق — من النخلة إلى وسط المدينة، مُنتقى لمن يطمح للأرقى.">Own an address that <em>defines</em> the skyline — from the Palm to Downtown, curated for those who expect more.</h1>
+    </div>
+    <div class="hero-stats fade d2">
+      <div class="stat"><div class="num">11</div><hr><div class="desc" data-ar="لغة يتحدثها فريقنا الاستشاري">Languages spoken by our advisory team</div></div>
+      <div class="stat"><div class="num">&lt; 5<span style="font-size:0.5em" data-ar=" د"> min</span></div><hr><div class="desc" data-ar="متوسط زمن الرد عبر واتساب">Average response time on WhatsApp</div></div>
+      <div class="stat"><div class="num">1:1</div><hr><div class="desc" data-ar="مستشار مخصّص من أول معاينة حتى التسليم">A dedicated advisor from first viewing to handover</div></div>
+    </div>
+  </div>
+  <div class="hero-display fade d3">JOYA</div>
+  <div class="hero-cta-wrap fade d4">
+    <a href="#properties" class="cta-pill"><span data-ar="استكشف العقارات">Explore Residences</span>
+      <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+  </div>
+</header>
+
+<!-- ===== ABOUT / WHY JOYA ===== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker center" data-ar="لماذا جويا">Why JOYA</span>
+      <h2 class="s-title" data-ar="طريقة أكثر <em>تأنّياً</em> للشراء في دبي">A more <em>considered</em> way to buy in Dubai</h2>
+      <p class="s-sub" data-ar="نمزج معرفة عميقة بالسوق المحلي مع استشارة سرّية شاملة — لنختار كل عقار بنفس العناية التي ستعيش بها فيه.">We pair deep local market knowledge with discreet, end-to-end advisory — so every residence we represent is chosen with the same care you'll bring to living in it.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="reveal">
+        <h3 class="feat-heading" data-ar="منازل تُختار لطابعها، لا لخطة سدادها فقط.">Homes selected for character, not just a payment plan.</h3>
+        <p class="feat-body" data-ar="كل عقار يُفحص شخصياً من مستشارينا: التصميم، الإطلالة، المجتمع، والقيمة طويلة الأمد.">Every listing is personally vetted by our advisors for design, view, community and long-term value.</p>
+        <a href="#properties" class="btn btn-dark"><span data-ar="تصفّح المجموعة">View Collection</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <div class="partners">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>Emaar</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>DAMAC</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>Nakheel</span>
+        </div>
+      </div>
+      <div class="feat-center reveal"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80" alt="Light-filled luxury Dubai interior"></div>
+      <div class="reveal">
+        <ul class="feat-list">
+          <li class="feat-item"><h4 data-ar="استشارة خاصة">Private Advisory</h4><p data-ar="مستشار مخصّص لكل عميل، من أول معاينة حتى التسليم.">A dedicated specialist for every client, from first viewing to handover.</p></li>
+          <li class="feat-item"><h4 data-ar="عقارات حصرية">Off-Market Access</h4><p data-ar="عقارات لا تصل أبداً إلى البوابات العامة.">Residences that never reach the public portals.</p></li>
+          <li class="feat-item"><h4 data-ar="الإقامة الذهبية">Golden Visa Guidance</h4><p data-ar="دعم شامل في الاستثمار العقاري المرتبط بالإقامة.">End-to-end support on residency-linked property investment.</p></li>
+        </ul>
+        <div class="review">
+          <div class="avatars">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="">
+          </div>
+          <div class="score">4.9 <span data-ar="تقييمات العملاء">Client Ratings</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AREAS ===== -->
+<section class="section areas" id="areas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker center" data-ar="أين نعمل">Where We Operate</span>
+      <h2 class="s-title" data-ar="أرقى <em>عناوين</em> دبي">Dubai's most <em>coveted</em> addresses</h2>
+      <p class="s-sub" data-ar="من شاطئ النخلة إلى بنتهاوس وسط المدينة — استكشف المجتمعات التي نعرفها عن قرب.">From beachfront on the Palm to penthouse living Downtown — explore the communities we know intimately.</p>
+    </div>
+    <div class="area-grid">
+      <a class="area-card tall reveal" href="#properties">
+        <img src="https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=900&q=80" alt="Palm Jumeirah aerial">
+        <div class="area-meta"><div><h3 data-ar="نخلة جميرا">Palm Jumeirah</h3><small data-ar="فلل شاطئية وقصور مميزة">Beachfront villas &amp; signature mansions</small></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
+      <a class="area-card reveal" href="#properties">
+        <img src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8f5?auto=format&fit=crop&w=800&q=80" alt="Downtown Dubai">
+        <div class="area-meta"><div><h3 data-ar="وسط المدينة">Downtown</h3><small data-ar="إطلالات برج خليفة وبنتهاوس">Burj views &amp; penthouses</small></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
+      <a class="area-card reveal" href="#properties">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80" alt="Dubai Marina">
+        <div class="area-meta"><div><h3 data-ar="مرسى دبي">Dubai Marina</h3><small data-ar="حياة برجية على الواجهة المائية">Waterfront high-rise living</small></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
+      <a class="area-card reveal" href="#properties">
+        <img src="https://images.unsplash.com/photo-1583509711855-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80'" alt="Emirates Hills villa">
+        <div class="area-meta"><div><h3 data-ar="تلال الإمارات">Emirates Hills</h3><small data-ar="فلل مغلقة على ملاعب الغولف">Gated golf-course estates</small></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
+      <a class="area-card reveal" href="#properties">
+        <img src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&w=800&q=80" alt="Business Bay">
+        <div class="area-meta"><div><h3 data-ar="الخليج التجاري">Business Bay</h3><small data-ar="أبراج عصرية على القناة">Canal-side modern towers</small></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPERTIES ===== -->
+<section class="section" id="properties">
+  <div class="wrap">
+    <div class="props-head reveal">
+      <h2 data-ar="عقارات <em>مختارة</em>">Featured <em>residences</em></h2>
+      <p data-ar="مجموعة من باقتنا الحالية. مرّر للاستكشاف — كل منزل متاح لمعاينة خاصة.">A selection from our current collection. Scroll to explore — each home is available for a private viewing.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="props-row reveal">
+      <article class="prop-card">
+        <div class="prop-img"><span class="badge" data-ar="متاح">Available</span><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="prop-details">
+          <div class="prop-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="نخلة جميرا">Palm Jumeirah</span></div>
+          <div class="prop-row"><h4 data-ar="فيلا شاطئية مميزة">Signature Beach Villa</h4><div class="prop-price" data-ar="42 مليون درهم">AED 42M</div></div>
+          <div class="prop-specs"><span data-ar="5 غرف">5 Beds</span><span data-ar="6 حمّامات">6 Baths</span><span data-ar="9,800 قدم²">9,800 sqft</span></div>
+        </div>
+      </article>
+      <article class="prop-card">
+        <div class="prop-img"><span class="badge" data-ar="عرض جديد">New Listing</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="prop-details">
+          <div class="prop-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="وسط المدينة">Downtown Dubai</span></div>
+          <div class="prop-row"><h4 data-ar="بنتهاوس بإطلالة البرج">Burj-View Penthouse</h4><div class="prop-price" data-ar="28 مليون درهم">AED 28M</div></div>
+          <div class="prop-specs"><span data-ar="4 غرف">4 Beds</span><span data-ar="5 حمّامات">5 Baths</span><span data-ar="6,400 قدم²">6,400 sqft</span></div>
+        </div>
+      </article>
+      <article class="prop-card">
+        <div class="prop-img"><span class="badge" data-ar="متاح">Available</span><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="prop-details">
+          <div class="prop-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="مرسى دبي">Dubai Marina</span></div>
+          <div class="prop-row"><h4 data-ar="شقة مرسى سكاي">Marina Sky Residence</h4><div class="prop-price" data-ar="14.5 مليون درهم">AED 14.5M</div></div>
+          <div class="prop-specs"><span data-ar="3 غرف">3 Beds</span><span data-ar="4 حمّامات">4 Baths</span><span data-ar="4,100 قدم²">4,100 sqft</span></div>
+        </div>
+      </article>
+      <article class="prop-card">
+        <div class="prop-img"><span class="badge" data-ar="حصري">Exclusive</span><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt=""></div>
+        <div class="prop-details">
+          <div class="prop-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="تلال الإمارات">Emirates Hills</span></div>
+          <div class="prop-row"><h4 data-ar="قصر الجرينز">The Greens Mansion</h4><div class="prop-price" data-ar="65 مليون درهم">AED 65M</div></div>
+          <div class="prop-specs"><span data-ar="7 غرف">7 Beds</span><span data-ar="9 حمّامات">9 Baths</span><span data-ar="16,000 قدم²">16,000 sqft</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="section team" id="team">
+  <div class="wrap">
+    <div class="team-grid">
+      <!-- NOTE: swap the Unsplash src below for each consultant's real headshot from joyaproperties.com/wp-content -->
+      <div class="team-cards reveal">
+        <div class="team-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt=""><div class="meta"><b>Nabeel Hammudeh</b><small data-ar="شريك مؤسس ومدير عام · عربي، إنجليزي">Co-founder &amp; Managing Director · Arabic, English</small></div></div>
+        <div class="team-card"><img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80" alt=""><div class="meta"><b>Carlo Fanini</b><small data-ar="مدير مبيعات · إيطالي، إنجليزي">Sales Manager · Italian, English</small></div></div>
+        <div class="team-card"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt=""><div class="meta"><b>Simona Kirilova</b><small data-ar="مديرة مبيعات · بلغاري، إنجليزي">Sales Manager · Bulgarian, English</small></div></div>
+        <div class="team-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt=""><div class="meta"><b>Zaid Elfar</b><small data-ar="مستشار عقاري أول · عربي، إنجليزي">Senior Property Consultant · Arabic, English</small></div></div>
+        <div class="team-card"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80" alt=""><div class="meta"><b>Yassmine Lahlou</b><small data-ar="مستشارة عقارية أولى · إيطالي، إنجليزي">Senior Property Consultant · Italian, English</small></div></div>
+      </div>
+      <div class="team-text reveal">
+        <span class="kicker" data-ar="الفريق">The People</span>
+        <h3 data-ar="مستشارون يتعاملون مع <em>منزلك</em> كأنه منزلهم">Advisors who treat <em>your home</em> like their own</h3>
+        <p data-ar="فريق صغير ومتمرّس يتحدث 11 لغة — بلا مراكز اتصال، بلا تحويلات. المستشار الذي تقابله في أول معاينة هو من يُغلق صفقتك ويبقى بعد التسليم.">A small, senior team speaking 11 languages — no call centres, no hand-offs. The advisor you meet at your first viewing is the one who closes your deal and stays on past handover.</p>
+        <a href="#contact" class="btn btn-light"><span data-ar="تعرّف على الفريق">Meet the Team</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker center" data-ar="آراء العملاء">Client Voices</span>
+      <h2 class="s-title" data-ar="موثوق من المشترين <em>حول العالم</em>">Trusted by buyers <em>worldwide</em></h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p data-ar="&laquo;كان مستشارنا ممتازاً من البداية إلى النهاية، متعاوناً ومنتبهاً لكل التفاصيل. اسمه نبيل، وهو إضافة حقيقية لشركته.&raquo;">"Our agent was excellent from start to finish — so helpful and attentive. His name was Nabeel, and he's a real asset to his company."</p>
+        <div class="who"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=80&q=80" alt=""><div><b>Mark Baxter</b><small data-ar="مشترٍ">Buyer</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p data-ar="&laquo;كان نبيل وكيلنا في صفقتين، وسار كل شيء بسلاسة تامة. دائماً محترف، متابعة رائعة، واهتمام بالتفاصيل. أنصح به أصدقائي.&raquo;">"Nabeel was our agent for two deals — everything went perfectly smooth. Always professional, great follow-ups and attention to detail. I'd recommend him to my friends."</p>
+        <div class="who"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&q=80" alt=""><div><b>Daria Derbasova</b><small data-ar="مستثمرة">Investor</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p data-ar="&laquo;أفضل خدمة على الإطلاق مع نبيل. تجربة سلسة من أول تواصل حتى تسليم المفاتيح.&raquo;">"Best service ever with Nabeel. A seamless experience from first contact to the handover of keys."</p>
+        <div class="who"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt=""><div><b>Karine Ugarte</b><small data-ar="عميلة">Client</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-l reveal">
+        <span class="kicker" style="color:rgba(255,255,255,0.5)" data-ar="تواصل معنا">Get In Touch</span>
+        <h2 data-ar="لنجد لك <em>مكانك</em> في دبي">Let's find your <em>place</em> in Dubai</h2>
+        <p data-ar="أخبرنا بما تبحث عنه وسيتواصل معك مستشار خبير عبر واتساب خلال دقائق — لا مراكز اتصال، لا إزعاج.">Tell us what you're looking for and a senior advisor will reply on WhatsApp within minutes — no call centres, no spam.</p>
+        <ul class="contact-info">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="برج برايم 1401، الخليج التجاري، دبي">Prime Tower 1401, Business Bay, Dubai, UAE</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span dir="ltr">+971 58 597 6060</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@joyaproperties.com</li>
+        </ul>
+      </div>
+      <div class="form reveal">
+        <div id="formFields">
+          <a href="https://wa.me/971585976060?text=Hello%20Joya%20Properties%2C%20I'd%20like%20to%20enquire%20about%20a%20property." target="_blank" rel="noopener" class="btn btn-wa" id="waFormBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1-1.5-.7-2.5-1.3-3.5-3-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-1 .9-1.2 2-.7 3.4.5 1.5 1.5 2.9 2 3.5.3.4 2.2 3.4 5.4 4.6 2 .8 2.8.8 3.8.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.5c-1.6 0-3.2-.4-4.6-1.2l-3.3.9.9-3.2C4.1 16.4 3.6 14.7 3.6 13 3.6 8.3 7.4 4.5 12 4.5s8.4 3.8 8.4 8.5-3.8 8.5-8.4 8.5M12 2.5C6.3 2.5 1.6 7.2 1.6 13c0 1.9.5 3.7 1.4 5.3L1.5 23l4.8-1.3c1.5.8 3.2 1.3 5 1.3h.1c5.7 0 10.4-4.7 10.4-10.5C21.8 7.2 17.1 2.5 12 2.5"/></svg><span data-ar="تواصل عبر واتساب">Chat on WhatsApp</span></a>
+          <div class="form-divider"><span data-ar="أو اترك تفاصيلك">or leave your details</span></div>
+          <div class="field"><label for="name" data-ar="الاسم الكامل">Full Name</label><input id="name" type="text" placeholder="Your name" data-ph-ar="اسمك"></div>
+          <div class="field-row">
+            <div class="field"><label for="email" data-ar="البريد الإلكتروني">Email</label><input id="email" type="email" placeholder="you@email.com" data-ph-ar="بريدك@الإيميل.com"></div>
+            <div class="field"><label for="phone" data-ar="الهاتف">Phone</label><input id="phone" type="tel" placeholder="+971 ..." data-ph-ar="+971 ..."></div>
+          </div>
+          <div class="field"><label for="area" data-ar="مهتم بـ">Interested In</label>
+            <select id="area"><option data-ar="نخلة جميرا">Palm Jumeirah</option><option data-ar="وسط المدينة">Downtown Dubai</option><option data-ar="مرسى دبي">Dubai Marina</option><option data-ar="تلال الإمارات">Emirates Hills</option><option data-ar="الخليج التجاري">Business Bay</option><option data-ar="غير متأكد بعد">Other / Not sure yet</option></select>
+          </div>
+          <div class="field"><label for="msg" data-ar="رسالتك">Message</label><textarea id="msg" placeholder="What are you looking for?" data-ph-ar="ما الذي تبحث عنه؟"></textarea></div>
+          <button class="btn btn-light" id="submitBtn"><span data-ar="اطلب معاودة الاتصال">Request a Call Back</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          <p class="form-note" data-ar="نرد عبر واتساب خلال دقائق · تبقى بياناتك خاصة.">We reply on WhatsApp within minutes · Your details stay private.</p>
+        </div>
+        <div class="form-ok" id="formOk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <h4 data-ar="شكراً لك">Thank you</h4>
+          <p data-ar="سيتواصل معك مستشار خبير قريباً.">A senior advisor will be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">JOYA</div>
+        <p data-ar="عقارات سكنية فاخرة منتقاة واستشارة سرّية في أرقى مجتمعات دبي. منازل حقيقية، نصح صادق، علاقات دائمة.">Curated luxury residences and discreet advisory across Dubai's finest communities. Real homes, honest counsel, lasting relationships.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/joya-properties" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.instagram.com/joya_properties" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/joyapropertiesluxe" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5 data-ar="استكشف">Explore</h5><ul><li><a href="#properties" data-ar="العقارات">Properties</a></li><li><a href="#areas" data-ar="المناطق">Areas</a></li><li><a href="#about" data-ar="عن جويا">About</a></li><li><a href="#team" data-ar="الفريق">Team</a></li></ul></div>
+      <div class="footer-col"><h5 data-ar="خدماتنا">Services</h5><ul><li><a href="#" data-ar="الشراء">Buying</a></li><li><a href="#" data-ar="البيع">Selling</a></li><li><a href="#" data-ar="التأجير">Leasing</a></li><li><a href="#" data-ar="الإقامة الذهبية">Golden Visa</a></li></ul></div>
+      <div class="footer-col"><h5 data-ar="تواصل">Contact</h5><ul><li><a href="mailto:info@joyaproperties.com">info@joyaproperties.com</a></li><li><a href="tel:+971585976060" dir="ltr">+971 58 597 6060</a></li><li><a href="#contact" data-ar="احجز معاينة">Book a Viewing</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <small data-ar="© 2026 جويا العقارية ذ.م.م · الخليج التجاري، دبي">© 2026 JOYA Properties LLC · Business Bay, Dubai, UAE</small>
+      <div class="links"><a href="#" data-ar="الخصوصية">Privacy</a><a href="#" data-ar="الشروط">Terms</a><a href="#">RERA</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://wa.me/971585976060?text=Hello%20Joya%20Properties%2C%20I'd%20like%20to%20enquire%20about%20a%20property." target="_blank" rel="noopener" class="wa-fab" id="waFab" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1-1.5-.7-2.5-1.3-3.5-3-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-1 .9-1.2 2-.7 3.4.5 1.5 1.5 2.9 2 3.5.3.4 2.2 3.4 5.4 4.6 2 .8 2.8.8 3.8.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.5c-1.6 0-3.2-.4-4.6-1.2l-3.3.9.9-3.2C4.1 16.4 3.6 14.7 3.6 13 3.6 8.3 7.4 4.5 12 4.5s8.4 3.8 8.4 8.5-3.8 8.5-8.4 8.5M12 2.5C6.3 2.5 1.6 7.2 1.6 13c0 1.9.5 3.7 1.4 5.3L1.5 23l4.8-1.3c1.5.8 3.2 1.3 5 1.3h.1c5.7 0 10.4-4.7 10.4-10.5C21.8 7.2 17.1 2.5 12 2.5"/></svg>
+  <span class="wa-label" data-ar="تواصل عبر واتساب">Chat with us</span>
+</a>
+
+<script>
+// ===== LANGUAGE TOGGLE (EN <-> AR) =====
+(function(){
+  const html=document.documentElement;
+  const btn=document.getElementById('langToggle');
+  // cache English content + placeholders on load
+  document.querySelectorAll('[data-ar]').forEach(el=>{el.dataset.en=el.innerHTML;});
+  document.querySelectorAll('[data-ph-ar]').forEach(el=>{el.dataset.phEn=el.getAttribute('placeholder')||'';});
+  let lang='en';
+  function apply(l){
+    lang=l;
+    const ar=(l==='ar');
+    html.lang=ar?'ar':'en';
+    html.dir=ar?'rtl':'ltr';
+    document.querySelectorAll('[data-ar]').forEach(el=>{el.innerHTML=ar?el.dataset.ar:el.dataset.en;});
+    document.querySelectorAll('[data-ph-ar]').forEach(el=>{el.setAttribute('placeholder',ar?el.dataset.phAr:el.dataset.phEn);});
+    btn.textContent=ar?'English':'العربية';
+  }
+  btn.addEventListener('click',()=>apply(lang==='en'?'ar':'en'));
+})();
+
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>60);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+// mobile drawer
+const drawer=document.getElementById('drawer');
+document.getElementById('burger').addEventListener('click',()=>{drawer.classList.add('open');document.body.style.overflow='hidden';});
+const closeDrawer=()=>{drawer.classList.remove('open');document.body.style.overflow='';};
+document.getElementById('closeDrawer').addEventListener('click',closeDrawer);
+document.querySelectorAll('.dlink').forEach(a=>a.addEventListener('click',closeDrawer));
+
+// scroll reveal
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// contact form (demo)
+document.getElementById('submitBtn').addEventListener('click',()=>{
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  if(!name||!email){
+    if(!name)document.getElementById('name').style.borderColor='#ff6b6b';
+    if(!email)document.getElementById('email').style.borderColor='#ff6b6b';
+    return;
+  }
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formOk').style.display='block';
+});
+['name','email'].forEach(id=>document.getElementById(id).addEventListener('input',e=>e.target.style.borderColor=''));
+</script>
+</body>
+</html>
